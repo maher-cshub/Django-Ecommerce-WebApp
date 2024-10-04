@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+    <!--HEAD SECTION-->
+    {% include "partials/_head.html" %}
+
+    <!--HEADER-->
+    {% include "partials/_header.html" %}
+
+    
+    <!--MAIN CONTENT-->
+    {% block content %}{% endblock content %}
+
+
+    <!--FOOTER-->
+    {% include "partials/_footer.html" %}
+
+    <!--JS/CSS LIBS-->
+    {% include "partials/_vendorJS.html" %}
+
+</html>
