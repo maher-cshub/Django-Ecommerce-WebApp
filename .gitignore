@@ -1,3 +1,4 @@
 project_guide.docx
 .env
 venv
+~*.docx
