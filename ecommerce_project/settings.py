@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     ##CUSTOM APPS
-    'core'
+    'core',
+    'userauths'
 ]
 
 MIDDLEWARE = [
@@ -123,7 +125,7 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    "/var/www/static/",
+    "static/",
 ]
 
 MEDIA_URL = 'media/'
@@ -136,3 +138,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+##JAZZMIN CONFIG
+
+
+AUTH_USER_MODEL = "userauths.User"
