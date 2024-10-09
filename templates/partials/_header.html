@@ -109,7 +109,7 @@
     <div class="container">
         <div class="header-wrap">
         <div class="logo logo-width-1">
-            <a href="index.html"
+            <a href=" {% url "core:index" %}"
             ><img
                 src="{% static 'assets/imgs/theme/logo.svg' %}"
                 alt="logo"
@@ -288,9 +288,11 @@
                         >
                     </li>
                     <li>
-                        <a href="page-login.html"
-                        ><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a
-                        >
+                        {% if user.is_authenticated %}
+                            <a href="{% url "userauths:logout" %}"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
+                        {% else %}
+                            <a href="{% url "userauths:login" %}"><i class="fi fi-rs-sign-in mr-10"></i>Sign in</a>
+                        {% endif %}
                     </li>
                     </ul>
                 </div>
